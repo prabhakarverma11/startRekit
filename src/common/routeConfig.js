@@ -3,7 +3,7 @@ import App from '../containers/App';
 import { PageNotFound } from '../components';
 import homeRoute from '../features/home/route';
 import loginRoute from '../features/login/route';
-
+import configureStore from "./configStore"
 const routes = [{
   path: '/',
   component: App,
@@ -44,3 +44,30 @@ function handleIndexRoute(route) {
 
 routes.forEach(handleIndexRoute);
 export default routes;
+
+const store = configureStore({});
+
+export function requireAuth(nextState, replace, callback){
+    console.log("This URL needs authentication");
+    const {login: {isAuthenticated}} = store.getState();
+    console.log(isAuthenticated);
+    if (!isAuthenticated) {
+        console.log("it is not here");
+        replace({
+            pathname: '/login',
+            state: {nextPathname: nextState.location.pathname}
+        });
+    }
+    callback();
+};
+
+export function redirectAuth (nextState, replace, callback) {
+    const {login: {isAuthenticated}} = store.getState();
+    console.log("URL is being redirected");
+    if (isAuthenticated) {
+        replace({
+            pathname: '/'
+        });
+    }
+    callback();
+};

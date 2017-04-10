@@ -6,9 +6,8 @@ import SigninForm from "./components/SigninForm";
 
 export class DefaultPage extends Component {
   static propTypes = {
-    //errorMessage: PropTypes.object.isRequired,
-    //successMessage: PropTypes.object.isRequired,
-    requestSignin: PropTypes.func.isRequired,
+      login: PropTypes.object.isRequired,
+      actions: PropTypes.object.isRequired,
   };
 
   render() {
@@ -21,8 +20,8 @@ export class DefaultPage extends Component {
                 <strong>Sign in to get in touch</strong>
               </div>
               <SigninForm {...this.props} requestSignin={(creds) => {
-                  this.props.requestSignin(creds)
-              }} errorMessage={this.props.errorMessage} successMessage={this.props.successMessage}/>
+                  this.props.actions.login(creds)
+              }} errorMessage={this.props.login.errorMessage} successMessage={this.props.login.successMessage}/>
 
             </div>
           </div>
@@ -34,17 +33,14 @@ export class DefaultPage extends Component {
 /* istanbul ignore next */
 function mapStateToProps(store) {
   return {
-      errorMessage: store.authenticate.errorMessage,
-      successMessage: store.authenticate.successMessage
+      login: store.login
   }
 }
 
 /* istanbul ignore next */
 function mapDispatchToProps(dispatch) {
   return {
-      requestSignin: (creds) => {
-          dispatch(signin(creds));
-      }
+      actions: bindActionCreators({ ...actions }, dispatch)
   };
 }
 

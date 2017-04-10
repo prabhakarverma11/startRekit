@@ -1,11 +1,11 @@
 import initialState from './initialState';
-import { reducer as loginAction } from './loginAction';
-import { reducer as logoutAction } from './logoutAction';
+import { reducer as login } from './loginAction';
+import { reducer as logout } from './logoutAction';
 // import { reducer as signupAction } from './signupAction';
 
 const reducers = [
-  loginAction,
-  logoutAction,
+  login,
+  logout,
   // signupAction,
 ];
 
