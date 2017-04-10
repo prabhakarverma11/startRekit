@@ -58,15 +58,14 @@ export function login(creds) {
                     localStorage.setItem('id_token', JSON.parse(response.data.user).id_token);
                     dispatch(receiveLogin(JSON.parse(response.data.user)));
                 } else {
-                    // console.log("<><><><><><>");
+                    console.log("<><><><><><>");
                     dispatch(loginError(response.data.message));
                     return Promise.reject(response.data);
                 }
             }).catch((err) => {
                 //dispatch(loginError("Authentication Failed !"));
-                dispatch(receiveLogin({idToken: 12345}));
-                localStorage.setItem('id_token', 12345);
-                //console.error("Authentication Error: ")
+                dispatch(receiveLogin());
+                console.error("Authentication Error: ")
             });
     }
 }
@@ -108,6 +107,6 @@ export function reducer(state, action) {
     }
 
   }
-  // console.log(newState);
+  console.log(newState);
   return newState;
 }

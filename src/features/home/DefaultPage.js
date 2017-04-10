@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Hello, RedditList } from './index';
 import * as actions from './redux/actions';
+import { Link } from 'react-router';
 
 export class DefaultPage extends Component {
   static propTypes = {
@@ -38,6 +39,7 @@ export class DefaultPage extends Component {
     const { count, fetchRedditReactjsListPending, redditReactjsList, fetchRedditReactjsListError } = this.props.home;
     return (
       <div className="home-default-page">
+        <Link to="/login/logout">Logout</Link>
         <Hello />
         <p>
           This is the sample page of the project. Seeing this page means everything works well now!<br />

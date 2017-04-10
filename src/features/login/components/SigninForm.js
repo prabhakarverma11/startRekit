@@ -1,10 +1,18 @@
 import React, {Component, PropTypes} from "react";
 import {Link} from "react-router";
 import ReactDOM from "react-dom";
+import {redirectAuth} from "../../../common/routeConfig";
+import {Router, browserHistory} from 'react-router';
 export default class SigninForm extends Component {
     constructor(props) {
         super(props);
     }
+    // componentDidUpdate =() =>{
+    //     if(this.props.login.isAuthenticated){
+    //         browserHistory.push("/");
+    //         console.log("browserHistory uodates");
+    //     }
+    // }
 
     onFormSubmit = (e) => {
         e.preventDefault();
@@ -13,7 +21,6 @@ export default class SigninForm extends Component {
         const creds = {"username": username.trim(), "password": password.trim()};
         console.log(creds);
         this.props.requestSignin(creds);
-
     }
 
     render() {

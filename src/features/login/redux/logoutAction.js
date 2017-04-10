@@ -38,7 +38,6 @@ export function logout() {
         } catch (err) {
             dispatch(logoutError());
         }
-        ;
         dispatch(receiveLogout());
         return;
     }
@@ -49,20 +48,20 @@ export function reducer(state, action) {
     switch (action.type) {
         case LOGOUT_REQUEST: {
             newState.isFetching = true;
-            newState.isAuthenticated = true;
-            newState.errorMessage = '';
-            newState.successMessage = '';
-            newState.user = {};
-            newState.idToken = '';
+            // newState.isAuthenticated = false;
+            // newState.errorMessage = '';
+            // newState.successMessage = '';
+            // newState.user = {};
+            // newState.idToken = null;
             break;
         }
         case LOGOUT_SUCCESS: {
             newState.isFetching = false;
             newState.isAuthenticated = false;
-            newState.errorMessage = '';
+            // newState.errorMessage = '';
             newState.successMessage = action.message;
             newState.user = {};
-            newState.idToken = '';
+            newState.idToken = null;
             break;
         }
         case LOGOUT_FAILURE: {
@@ -71,7 +70,7 @@ export function reducer(state, action) {
             newState.errorMessage = action.message;
             newState.successMessage = '';
             newState.user = {};
-            newState.idToken = '';
+            newState.idToken = null;
             break;
         }
         default:
