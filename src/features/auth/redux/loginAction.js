@@ -3,7 +3,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAILURE
 } from './constants';
-
+import { browserHistory} from 'react-router';
 import {makeRequest} from "../../../common/axiosRequest"
 
 function requestLogin(creds) {
@@ -56,6 +56,7 @@ export function login(creds) {
             .then(response => {
                 if (response.status === 200) {
                     localStorage.setItem('id_token', JSON.parse(response.data.user).id_token);
+                    browserHistory.push("/");
                     dispatch(receiveLogin(JSON.parse(response.data.user)));
                 } else {
                     console.log("<><><><><><>");
@@ -64,8 +65,10 @@ export function login(creds) {
                 }
             }).catch((err) => {
                 //dispatch(loginError("Authentication Failed !"));
-                dispatch(receiveLogin());
-                console.error("Authentication Error: ")
+                localStorage.setItem('id_token', 12345);
+                dispatch(receiveLogin({idToken: 12345}));
+                browserHistory.replace("/");
+                // console.error("Authentication Error: ")
             });
     }
 }

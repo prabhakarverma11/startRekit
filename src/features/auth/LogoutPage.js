@@ -20,7 +20,7 @@ export class LogoutPage extends Component {
                     <a className="navbar-brand block m-t">Angulr</a>
                     <div className="m-b-lg">
                         <h3 className="m-b-n-lg">You're signed out.</h3>
-                        <h3 className="m-b-n-lg">Click <Link to="/login"> here </Link> to login.</h3>
+                        {/*<h3 className="m-b-n-lg">Click <Link to="/login"> here </Link> to login.</h3>*/}
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@ export class LogoutPage extends Component {
 /* istanbul ignore next */
 function mapStateToProps(store) {
     return {
-        login: store.login
+        auth: store.auth
     }
 }
 

@@ -7,8 +7,18 @@ export default class SigninForm extends Component {
     constructor(props) {
         super(props);
     }
+
+    // componentWillReceiveProps(nextProps) {
+    //     console.log("component will receive Props");
+    //     console.log(nextProps);
+    //     if (nextProps.auth.isAuthenticated && nextProps.auth.user &&
+    //         !nextProps.auth.errorMessage) {
+    //         browserHistory.push("/");
+    //     }
+    // }
+
     // componentDidUpdate =() =>{
-    //     if(this.props.login.isAuthenticated){
+    //     if(this.props.auth.isAuthenticated){
     //         browserHistory.push("/");
     //         console.log("browserHistory uodates");
     //     }
@@ -21,6 +31,7 @@ export default class SigninForm extends Component {
         const creds = {"username": username.trim(), "password": password.trim()};
         console.log(creds);
         this.props.requestSignin(creds);
+
     }
 
     render() {

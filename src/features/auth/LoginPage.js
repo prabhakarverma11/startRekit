@@ -3,9 +3,10 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 import SigninForm from "./components/SigninForm";
+import { push } from 'react-router-redux';
 export class DefaultPage extends Component {
   static propTypes = {
-      login: PropTypes.object.isRequired,
+      auth: PropTypes.object.isRequired,
       actions: PropTypes.object.isRequired,
   };
 
@@ -20,7 +21,7 @@ export class DefaultPage extends Component {
               </div>
               <SigninForm {...this.props} requestSignin={(creds) => {
                   this.props.actions.login(creds)
-              }} errorMessage={this.props.login.errorMessage} successMessage={this.props.login.successMessage}/>
+              }} errorMessage={this.props.auth.errorMessage} successMessage={this.props.auth.successMessage}/>
 
             </div>
           </div>
@@ -32,14 +33,18 @@ export class DefaultPage extends Component {
 /* istanbul ignore next */
 function mapStateToProps(store) {
   return {
-      login: store.login
+      auth: store.auth,
+      //nextPathname: store.routing.locationBeforeTransitions.state.nextPathname,
   }
 }
 
 /* istanbul ignore next */
 function mapDispatchToProps(dispatch) {
   return {
-      actions: bindActionCreators({ ...actions }, dispatch)
+      actions: bindActionCreators({ ...actions }, dispatch),
+      // changeLocationOnSignIn: () => {
+      //     dispatch(push("/"));
+      // },
   };
 }
 

@@ -39,7 +39,7 @@ export class DefaultPage extends Component {
     const { count, fetchRedditReactjsListPending, redditReactjsList, fetchRedditReactjsListError } = this.props.home;
     return (
       <div className="home-default-page">
-        <Link to="/login/logout">Logout</Link>
+        <Link to="/auth/logout">Logout</Link>
         <Hello />
         <p>
           This is the sample page of the project. Seeing this page means everything works well now!<br />
@@ -80,8 +80,11 @@ export class DefaultPage extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log("state from home page");
+    console.log(state);
   return {
     home: state.home,
+    auth: state.auth
   };
 }
 
