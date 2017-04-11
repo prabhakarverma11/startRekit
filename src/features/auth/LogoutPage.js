@@ -7,9 +7,8 @@ import {browserHistory} from 'react-router';
 import { Link } from 'react-router';
 
 export class LogoutPage extends Component {
-    componentDidMount =()=>{
+    componentWillMount =()=>{
         this.props.actions.logout();
-        // browserHistory.push('/login/logout');
     };
 
     render() {

@@ -51,8 +51,8 @@ export function requireAuth(nextState, replace, callback) {
 
     console.log(store.getState());
 
-    const {auth: {loginReducer: {isAuthenticated}}} = store.getState();
-
+    // const {auth: {loginReducer: {isAuthenticated}}} = store.getState();
+    const {auth: {isAuthenticated}} = store.getState();
     console.log(isAuthenticated);
 
     if (!isAuthenticated) {

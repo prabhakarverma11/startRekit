@@ -82,106 +82,106 @@ export function login(creds, history, redirect = "/") {
 }
 
 
-const isFetching = (state = false,
-                    action) => {
-    switch (action.type) {
-        case LOGIN_REQUEST:
-
-            return true;
-        case LOGIN_SUCCESS:
-        case LOGIN_FAILURE:
-
-
-            return false;
-        default:
-            return state;
-    }
-};
-
-const isAuthenticated = (state = (localStorage.getItem('id_token') != ''),
-                         action) => {
-    switch (action.type) {
-        case LOGIN_SUCCESS:
-            return true;
-        case LOGIN_REQUEST:
-        case LOGIN_FAILURE:
-            return false;
-        default:
-            return state;
-    }
-};
-
-const errorMessage = (state = '',
-                      action) => {
-    switch (action.type) {
-        case LOGIN_REQUEST:
-        case LOGIN_SUCCESS:
-
-
-            return '';
-        case LOGIN_FAILURE:
-
-            return action.message;
-        default:
-            return state;
-    }
-};
-
-const successMessage = (state = '',
-                        action) => {
-    switch (action.type) {
-        case LOGIN_SUCCESS:
-
-
-            return action.successMessage;
-        case LOGIN_FAILURE:
-        case LOGIN_REQUEST:
-
-
-            return '';
-        default:
-            return state;
-    }
-};
-
-const user = (state = {},
-              action) => {
-    switch (action.type) {
-        case LOGIN_REQUEST:
-            return {};
-
-            return action.details;
-        case LOGIN_SUCCESS:
-            console.log("Hi from authReducer: user: ");
-            console.log(action.user);
-            return action.user;
-        case LOGIN_FAILURE:
-            return {};
-        default:
-            return state;
-    }
-};
-
-const idToken = (state = '', action) => {
-    console.log(action);
-    switch (action.type) {
-        case LOGIN_SUCCESS:
-            return action.idToken;
-        case LOGIN_REQUEST:
-        case LOGIN_FAILURE:
-            return '';
-        default:
-            return state;
-    }
-};
-
-const loginReducer = combineReducers({
-    isFetching,
-    isAuthenticated,
-    errorMessage,
-    user,
-    successMessage,
-    idToken,
-});
-
-export default loginReducer;
+// const isFetching = (state = false,
+//                     action) => {
+//     switch (action.type) {
+//         case LOGIN_REQUEST:
+//
+//             return true;
+//         case LOGIN_SUCCESS:
+//         case LOGIN_FAILURE:
+//
+//
+//             return false;
+//         default:
+//             return state;
+//     }
+// };
+//
+// const isAuthenticated = (state = (localStorage.getItem('id_token') != ''),
+//                          action) => {
+//     switch (action.type) {
+//         case LOGIN_SUCCESS:
+//             return true;
+//         case LOGIN_REQUEST:
+//         case LOGIN_FAILURE:
+//             return false;
+//         default:
+//             return state;
+//     }
+// };
+//
+// const errorMessage = (state = '',
+//                       action) => {
+//     switch (action.type) {
+//         case LOGIN_REQUEST:
+//         case LOGIN_SUCCESS:
+//
+//
+//             return '';
+//         case LOGIN_FAILURE:
+//
+//             return action.message;
+//         default:
+//             return state;
+//     }
+// };
+//
+// const successMessage = (state = '',
+//                         action) => {
+//     switch (action.type) {
+//         case LOGIN_SUCCESS:
+//
+//
+//             return action.successMessage;
+//         case LOGIN_FAILURE:
+//         case LOGIN_REQUEST:
+//
+//
+//             return '';
+//         default:
+//             return state;
+//     }
+// };
+//
+// const user = (state = {},
+//               action) => {
+//     switch (action.type) {
+//         case LOGIN_REQUEST:
+//             return {};
+//
+//             return action.details;
+//         case LOGIN_SUCCESS:
+//             console.log("Hi from authReducer: user: ");
+//             console.log(action.user);
+//             return action.user;
+//         case LOGIN_FAILURE:
+//             return {};
+//         default:
+//             return state;
+//     }
+// };
+//
+// const idToken = (state = '', action) => {
+//     console.log(action);
+//     switch (action.type) {
+//         case LOGIN_SUCCESS:
+//             return action.idToken;
+//         case LOGIN_REQUEST:
+//         case LOGIN_FAILURE:
+//             return '';
+//         default:
+//             return state;
+//     }
+// };
+//
+// const loginReducer = combineReducers({
+//     isFetching,
+//     isAuthenticated,
+//     errorMessage,
+//     user,
+//     successMessage,
+//     idToken,
+// });
+//
+// export default loginReducer;

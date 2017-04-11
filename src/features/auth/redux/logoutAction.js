@@ -1,11 +1,12 @@
 import {LOGOUT_FAILURE, LOGOUT_REQUEST, LOGOUT_SUCCESS} from "./constants";
 import initialState from "./initialState";
+import {combineReducers} from "redux";
 
 function requestLogout() {
     return {
         type: LOGOUT_REQUEST,
         isFetching: true,
-        isAuthenticated: true
+        isAuthenticated: false
     }
 }
 
@@ -14,7 +15,7 @@ function receiveLogout() {
         type: LOGOUT_SUCCESS,
         isFetching: false,
         isAuthenticated: false,
-        successMessage: ""
+        successMessage: "Logged out."
     };
 }
 
@@ -23,7 +24,7 @@ function logoutError() {
         type: LOGOUT_FAILURE,
         isFetching: false,
         isAuthenticated: true,
-        errorMessage: "Cound not logout"
+        errorMessage: "Could not logout"
     };
 }
 
@@ -39,39 +40,90 @@ export function logout() {
         return;
     }
 }
-
-export function reducer(state = initialState, action) {
-    const newState = Object.assign({}, state);
-    switch (action.type) {
-        case LOGOUT_REQUEST: {
-            newState.isFetching = true;
-            // newState.isAuthenticated = false;
-            // newState.errorMessage = '';
-            // newState.successMessage = '';
-            // newState.user = {};
-            // newState.idToken = null;
-            break;
-        }
-        case LOGOUT_SUCCESS: {
-            newState.isFetching = false;
-            newState.isAuthenticated = false;
-            // newState.errorMessage = '';
-            newState.successMessage = action.message;
-            newState.user = {};
-            newState.idToken = null;
-            break;
-        }
-        case LOGOUT_FAILURE: {
-            newState.isFetching = false;
-            newState.isAuthenticated = true;
-            newState.errorMessage = action.message;
-            newState.successMessage = '';
-            newState.user = {};
-            newState.idToken = null;
-            break;
-        }
-        default:
-            return state;
-    }
-    return newState;
-}
+//
+// const isFetching = (state = false,
+//                     action) => {
+//     switch (action.type) {
+//         case LOGOUT_REQUEST:
+//             return true;
+//         case LOGOUT_SUCCESS:
+//         case LOGOUT_FAILURE:
+//             return false;
+//         default:
+//             return state;
+//     }
+// };
+//
+// const isAuthenticated = (state = (localStorage.getItem('id_token') !=''),
+//                          action) => {
+//     switch (action.type) {
+//         case LOGOUT_FAILURE:
+//             return true;
+//         case LOGOUT_REQUEST:
+//         case LOGOUT_SUCCESS:
+//             return false;
+//         default:
+//             return state;
+//     }
+// };
+//
+// const errorMessage = (state = '',
+//                       action) => {
+//     switch (action.type) {
+//         case LOGOUT_REQUEST:
+//         case LOGOUT_SUCCESS:
+//             return '';
+//         case LOGOUT_FAILURE:
+//             return action.message;
+//         default:
+//             return state;
+//     }
+// };
+//
+// const successMessage = (state = '',
+//                         action) => {
+//     switch (action.type) {
+//         case LOGOUT_SUCCESS:
+//             return action.successMessage;
+//         case LOGOUT_REQUEST:
+//         case LOGOUT_FAILURE:
+//             return '';
+//         default:
+//             return state;
+//     }
+// };
+//
+// const user = (state = {},
+//               action) => {
+//     switch (action.type) {
+//         case LOGOUT_REQUEST:
+//         case LOGOUT_FAILURE:
+//         case LOGOUT_SUCCESS:
+//             return {};
+//         default:
+//             return state;
+//     }
+// };
+//
+// const idToken = (state = '',
+//                  action) => {
+//     switch (action.type) {
+//         case LOGOUT_REQUEST:
+//         case LOGOUT_FAILURE:
+//         case LOGOUT_SUCCESS:
+//             return '';
+//         default:
+//             return state;
+//     }
+// };
+//
+// const logoutReducer = combineReducers({
+//     isFetching,
+//     isAuthenticated,
+//     errorMessage,
+//     user,
+//     successMessage,
+//     idToken,
+// });
+//
+// export default logoutReducer;
