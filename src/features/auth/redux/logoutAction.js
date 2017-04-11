@@ -1,8 +1,5 @@
-import {
-    LOGOUT_REQUEST,
-    LOGOUT_SUCCESS,
-    LOGOUT_FAILURE
-} from './constants';
+import {LOGOUT_FAILURE, LOGOUT_REQUEST, LOGOUT_SUCCESS} from "./constants";
+import initialState from "./initialState";
 
 function requestLogout() {
     return {
@@ -43,7 +40,7 @@ export function logout() {
     }
 }
 
-export function reducer(state, action) {
+export function reducer(state = initialState, action) {
     const newState = Object.assign({}, state);
     switch (action.type) {
         case LOGOUT_REQUEST: {

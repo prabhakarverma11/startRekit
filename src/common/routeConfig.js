@@ -1,9 +1,13 @@
-import App from '../containers/App';
+import App from "../containers/App";
 
-import {PageNotFound} from '../components';
-import homeRoute from '../features/home/route';
-import authRoute from '../features/auth/route';
-import configureStore from "./configStore"
+import {PageNotFound} from "../components";
+import homeRoute from "../features/home/route";
+import authRoute from "../features/auth/route";
+import configureStore from "./configStore";
+
+
+const store = configureStore({});
+
 const routes = [{
     path: '/',
     component: App,
@@ -42,15 +46,15 @@ function handleIndexRoute(route) {
     route.childRoutes.forEach(handleIndexRoute);
 }
 
-routes.forEach(handleIndexRoute);
-export default routes;
-
-const store = configureStore({});
-
 export function requireAuth(nextState, replace, callback) {
     console.log("This URL needs authentication");
-    const {auth: {isAuthenticated}} = store.getState();
+
+    console.log(store.getState());
+
+    const {auth: {loginReducer: {isAuthenticated}}} = store.getState();
+
     console.log(isAuthenticated);
+
     if (!isAuthenticated) {
         console.log("it is not here");
         replace({
@@ -59,7 +63,8 @@ export function requireAuth(nextState, replace, callback) {
         });
     }
     callback();
-};
+}
+;
 
 export function redirectAuth(nextState, replace, callback) {
     const {auth: {isAuthenticated}} = store.getState();
@@ -73,3 +78,6 @@ export function redirectAuth(nextState, replace, callback) {
 
     callback();
 };
+
+routes.forEach(handleIndexRoute);
+export default routes;
