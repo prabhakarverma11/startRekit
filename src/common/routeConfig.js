@@ -64,7 +64,7 @@ export function requireAuth(nextState, replace, callback) {
     }
     callback();
 }
-;
+
 
 export function redirectAuth(nextState, replace, callback) {
     const {auth: {isAuthenticated}} = store.getState();
@@ -77,7 +77,7 @@ export function redirectAuth(nextState, replace, callback) {
     }
 
     callback();
-};
+}
 
 routes.forEach(handleIndexRoute);
 export default routes;

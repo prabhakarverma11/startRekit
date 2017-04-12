@@ -3,6 +3,9 @@ import {browserHistory} from "react-router";
 import {makeRequest} from "../../../common/axiosRequest";
 import {push} from "react-router-redux";
 import {combineReducers} from "redux";
+import base64 from "base-64";
+import utf8 from "utf8";
+import {app} from "../../../common/appConfig";
 
 
 function requestLogin(creds) {
@@ -36,152 +39,46 @@ function loginError(message) {
     });
 }
 
-export function login(creds, history, redirect = "/") {
-    const config = {
-        api: 'http://localhost:8080/sme/api/login',
+export function login(creds, redirect = "/") {
+
+    let utfString = utf8.encode(creds.username + ":" + creds.password);
+    let encoded64String = base64.encode(utfString);
+    console.log(encoded64String);
+
+    const loginCall = {
+        api: app.config.apiURL + '/oauth/token?username='
+        + creds.username + '&password=' + creds.password +
+        '&grant_type=password&scope=write&client_secret='
+        + app.config.clientSecret + '&client_id=' + app.config.clientId,
+
         method: "POST",
         headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-            "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, X-Codingpedia"
+            "Authorization": "Basic " + encoded64String
         },
-        data: creds
-    }
+    };
+
     return dispatch => {
         dispatch(requestLogin({username: creds.username, password: creds.password}));
-        // if(creds.username === "prabhakarverma11@gmail.com" && creds.password ==="password"){
-        //     dispatch(receiveLogin({user:{name:"prabhakar",id_token:12345}}))
-        //     return null;
-        // }
-        return makeRequest(config.method, config.api, config.data, config.headers)
+
+        return makeRequest(loginCall.method, loginCall.api, loginCall.data, loginCall.headers)
             .then(response => {
                 if (response.status === 200) {
-                    localStorage.setItem('id_token', JSON.parse(response.data.user).idToken);
-                    dispatch(receiveLogin(JSON.parse(response.data.user)));
+                    localStorage.setItem('id_token', response.data.access_token);
+                    let user = {idToken: response.data.access_token};
+                    dispatch(receiveLogin(user));
+                    dispatch(push(redirect));
+
                 } else {
-                    console.log("<><><><><><>");
                     dispatch(loginError(response.data.message));
                     return Promise.reject(response.data);
                 }
             }).catch((err) => {
-                //dispatch(loginError("Authentication Failed !"));
+                dispatch(loginError("Authentication Failed !"));
 
-                localStorage.setItem('id_token', 12345);
 
-                let user = {
-                    idToken: 12345
-                };
-
-                dispatch(receiveLogin(user));
-
-                console.error("Authentication Error: ");
-                dispatch(push('/test-page-1'));
+                console.error("Authentication Error: " + err);
 
             });
     }
 }
 
-
-// const isFetching = (state = false,
-//                     action) => {
-//     switch (action.type) {
-//         case LOGIN_REQUEST:
-//
-//             return true;
-//         case LOGIN_SUCCESS:
-//         case LOGIN_FAILURE:
-//
-//
-//             return false;
-//         default:
-//             return state;
-//     }
-// };
-//
-// const isAuthenticated = (state = (localStorage.getItem('id_token') != ''),
-//                          action) => {
-//     switch (action.type) {
-//         case LOGIN_SUCCESS:
-//             return true;
-//         case LOGIN_REQUEST:
-//         case LOGIN_FAILURE:
-//             return false;
-//         default:
-//             return state;
-//     }
-// };
-//
-// const errorMessage = (state = '',
-//                       action) => {
-//     switch (action.type) {
-//         case LOGIN_REQUEST:
-//         case LOGIN_SUCCESS:
-//
-//
-//             return '';
-//         case LOGIN_FAILURE:
-//
-//             return action.message;
-//         default:
-//             return state;
-//     }
-// };
-//
-// const successMessage = (state = '',
-//                         action) => {
-//     switch (action.type) {
-//         case LOGIN_SUCCESS:
-//
-//
-//             return action.successMessage;
-//         case LOGIN_FAILURE:
-//         case LOGIN_REQUEST:
-//
-//
-//             return '';
-//         default:
-//             return state;
-//     }
-// };
-//
-// const user = (state = {},
-//               action) => {
-//     switch (action.type) {
-//         case LOGIN_REQUEST:
-//             return {};
-//
-//             return action.details;
-//         case LOGIN_SUCCESS:
-//             console.log("Hi from authReducer: user: ");
-//             console.log(action.user);
-//             return action.user;
-//         case LOGIN_FAILURE:
-//             return {};
-//         default:
-//             return state;
-//     }
-// };
-//
-// const idToken = (state = '', action) => {
-//     console.log(action);
-//     switch (action.type) {
-//         case LOGIN_SUCCESS:
-//             return action.idToken;
-//         case LOGIN_REQUEST:
-//         case LOGIN_FAILURE:
-//             return '';
-//         default:
-//             return state;
-//     }
-// };
-//
-// const loginReducer = combineReducers({
-//     isFetching,
-//     isAuthenticated,
-//     errorMessage,
-//     user,
-//     successMessage,
-//     idToken,
-// });
-//
-// export default loginReducer;
