@@ -1,12 +1,9 @@
-import {
-    LoginPage,
-    LogoutPage
-} from './index';
-import {redirectAuth} from "../../common/routeConfig"
-export default {
-    path: 'auth',
+import {LoginPage, LogoutPage} from "./index";
+
+export default (redirectAuth) => ({
+    path: 'login',
     childRoutes: [
-        {path: 'login', component: LoginPage, isIndex: true, onEnter: redirectAuth,},
+        {path: 'default-page', component: LoginPage, isIndex: true, onEnter: redirectAuth},
         {path: 'logout', component: LogoutPage},
     ],
-};
+});

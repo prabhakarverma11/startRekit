@@ -1,11 +1,11 @@
-import {createStore, applyMiddleware, compose} from 'redux';
-import {routerMiddleware} from 'react-router-redux';
+import {applyMiddleware, compose, createStore} from "redux";
+import {routerMiddleware} from "react-router-redux";
 
-import thunk from 'redux-thunk';
-import rootReducer from './rootReducer';
+import thunk from "redux-thunk";
+import rootReducer from "./rootReducer";
 
 
-import {createLogger} from 'redux-logger';
+import {createLogger} from "redux-logger";
 
 
 export default function configureStore(initialState, history) {

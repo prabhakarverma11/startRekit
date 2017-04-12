@@ -1,17 +1,16 @@
-import React, {Component, PropTypes} from 'react';
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
-import * as actions from './redux/actions';
+import React, {Component, PropTypes} from "react";
+import {bindActionCreators} from "redux";
+import {connect} from "react-redux";
+import * as actions from "./redux/actions";
 import SigninForm from "./components/SigninForm";
-import {push} from 'react-router-redux';
+import {push} from "react-router-redux";
+
+
 export class DefaultPage extends Component {
     static propTypes = {
         auth: PropTypes.object.isRequired,
         actions: PropTypes.object.isRequired
     };
-    componentWillMount =()=>{
-        this.forceUpdate();
-    }
 
     render() {
         return (
@@ -22,9 +21,12 @@ export class DefaultPage extends Component {
                         <div className="wrapper text-center">
                             <strong>Sign in to get in touch</strong>
                         </div>
-                        <SigninForm {...this.props} requestSignin={(creds) => {
-                            this.props.actions.login(creds, this.props.history)
-                        }} errorMessage={this.props.auth.errorMessage} successMessage={this.props.auth.successMessage}/>
+                        <SigninForm {...this.props}
+                                    login={(creds) => {
+                                        this.props.actions.login(creds, this.props.history)
+                                    }}
+                                    errorMessage={this.props.auth.errorMessage}
+                                    successMessage={this.props.auth.successMessage}/>
 
                     </div>
                 </div>

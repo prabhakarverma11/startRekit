@@ -20,6 +20,7 @@ function requestLogin(creds) {
 function receiveLogin(user) {
     console.log("USEr = >", JSON.stringify(user));
     console.log("USEr TOKEN = >", user.idToken);
+
     return ({
         type: LOGIN_SUCCESS,
         isFetching: false,
@@ -73,11 +74,8 @@ export function login(creds, redirect = "/") {
                     return Promise.reject(response.data);
                 }
             }).catch((err) => {
-                dispatch(loginError("Authentication Failed !"));
-
-
                 console.error("Authentication Error: " + err);
-
+                dispatch(loginError("Authentication Failed !"));
             });
     }
 }
