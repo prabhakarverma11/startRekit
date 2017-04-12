@@ -1,9 +1,7 @@
-import { login } from './loginAction';
-import { logout } from './logoutAction';
-// import { signup } from './signupAction';
+import {login} from "./loginAction";
+import {logout} from "./logoutAction";
 
 export {
-  login,
-  logout,
-  // signup
+    login,
+    logout,
 };

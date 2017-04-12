@@ -1,10 +1,6 @@
 import {combineReducers} from "redux";
 import {LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT_FAILURE, LOGOUT_REQUEST, LOGOUT_SUCCESS} from "./constants";
 
-import loginReducer from "./loginAction";
-import logoutReducer from "./logoutAction";
-import initialState from "./initialState";
-
 
 const isFetching = (state = false,
                     action) => {
@@ -22,7 +18,7 @@ const isFetching = (state = false,
     }
 };
 
-const isAuthenticated = (state = (localStorage.getItem('id_token')!=null),
+const isAuthenticated = (state = (localStorage.getItem('id_token') != null),
                          action) => {
     switch (action.type) {
         case LOGIN_SUCCESS:
@@ -115,40 +111,4 @@ const authReducer = combineReducers({
 });
 
 export default authReducer;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const reducers = combineReducers({
-//     loginReducer,
-//     logoutReducer,
-// });
-// export default reducers;
-
-// const reducers = [
-//   loginReducer,
-//     logoutReducer
-// ];
-//
-//
-// export default function reducer(state = initialState, action) {
-//     let newState;
-//     switch (action.type) {
-//         // Handle cross-topic actions here
-//         default:
-//             newState = state;
-//             break;
-//     }
-//     return reducers.reduce((s, r) => r(s, action), newState);
-// }
 
