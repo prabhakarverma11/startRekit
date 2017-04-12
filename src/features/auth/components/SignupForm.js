@@ -3,7 +3,7 @@ import {Link} from "react-router";
 import ReactDOM from "react-dom";
 import {redirectAuth} from "../../../common/routeConfig";
 import {Router, browserHistory} from 'react-router';
-export default class SigninForm extends Component {
+export default class SignupForm extends Component {
     constructor(props) {
         super(props);
     }
@@ -64,7 +64,7 @@ export default class SigninForm extends Component {
         );
     }
 }
-SigninForm.propTypes = {
+SignupForm.propTypes = {
     // login: PropTypes.func.isRequired,
     // errorMessage: PropTypes.string
 }

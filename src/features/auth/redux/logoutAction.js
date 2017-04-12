@@ -1,6 +1,8 @@
 import {LOGOUT_FAILURE, LOGOUT_REQUEST, LOGOUT_SUCCESS} from "./constants";
 import initialState from "./initialState";
 import {combineReducers} from "redux";
+import {push} from "react-router-redux";
+
 
 function requestLogout() {
     return {
@@ -37,6 +39,7 @@ export function logout() {
             dispatch(logoutError());
         }
         dispatch(receiveLogout());
+        dispatch(push('/auth/logout'));
         return;
     }
 }

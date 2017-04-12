@@ -22,7 +22,7 @@ const isFetching = (state = false,
     }
 };
 
-const isAuthenticated = (state = (localStorage.getItem('id_token')!=''),
+const isAuthenticated = (state = (localStorage.getItem('id_token')!=null),
                          action) => {
     switch (action.type) {
         case LOGIN_SUCCESS:
@@ -93,7 +93,7 @@ const idToken = (state = null,
                  action) => {
     switch (action.type) {
         case LOGIN_SUCCESS:
-            return action.id_token;
+            return action.idToken;
         case LOGIN_REQUEST:
         case LOGIN_FAILURE:
         case LOGOUT_REQUEST:

@@ -4,6 +4,7 @@ import { counterPlusOne } from './counterPlusOne';
 import { counterMinusOne } from './counterMinusOne';
 import { resetCounter } from './resetCounter';
 import { fetchRedditReactjsList, dismissFetchRedditReactjsListError } from './fetchRedditReactjsList';
+import {logout} from "../../auth/redux/logoutAction"
 
 export {
   counterPlusOne,
@@ -11,4 +12,5 @@ export {
   resetCounter,
   fetchRedditReactjsList,
   dismissFetchRedditReactjsListError,
+  logout,
 };

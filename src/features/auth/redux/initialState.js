@@ -1,6 +1,6 @@
 const initialState = {
     isFetching: false,
-    isAuthenticated: localStorage.getItem('id_token') !=null,
+    isAuthenticated: localStorage.getItem('id_token') != null,
     errorMessage: '',
     successMessage: '',
     user: {},

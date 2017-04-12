@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { Hello, RedditList } from './index';
 import * as actions from './redux/actions';
 import { Link } from 'react-router';
+import SimpleNav from "../../components/SimpleNav";
+import Navigation from "../../components/Navigation";
 
 export class DefaultPage extends Component {
   static propTypes = {
@@ -35,11 +37,13 @@ export class DefaultPage extends Component {
     this.props.actions.fetchRedditReactjsList();
   }
 
+
   render() {
     const { count, fetchRedditReactjsListPending, redditReactjsList, fetchRedditReactjsListError } = this.props.home;
     return (
       <div className="home-default-page">
-        <Link to="/auth/logout">Logout</Link>
+        {/*<Navigation />*/}
+        <button onClick={() => {this.props.actions.logout()}}>Logout</button>
         <Hello />
         <p>
           This is the sample page of the project. Seeing this page means everything works well now!<br />

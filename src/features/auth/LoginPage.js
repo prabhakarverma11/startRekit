@@ -9,6 +9,9 @@ export class DefaultPage extends Component {
         auth: PropTypes.object.isRequired,
         actions: PropTypes.object.isRequired
     };
+    componentWillMount =()=>{
+        this.forceUpdate();
+    }
 
     render() {
         return (

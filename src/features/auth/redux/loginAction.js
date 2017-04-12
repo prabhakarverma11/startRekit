@@ -75,7 +75,7 @@ export function login(creds, history, redirect = "/") {
                 dispatch(receiveLogin(user));
 
                 console.error("Authentication Error: ");
-                dispatch(push('/'));
+                dispatch(push('/test-page-1'));
 
             });
     }
