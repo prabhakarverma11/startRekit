@@ -1,5 +1,4 @@
 import {LOGOUT_FAILURE, LOGOUT_REQUEST, LOGOUT_SUCCESS} from "./constants";
-import {combineReducers} from "redux";
 import {push} from "react-router-redux";
 
 

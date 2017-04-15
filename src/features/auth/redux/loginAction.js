@@ -1,8 +1,6 @@
 import {LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS} from "./constants";
-import {browserHistory} from "react-router";
 import {makeRequest} from "../../../common/axiosRequest";
 import {push} from "react-router-redux";
-import {combineReducers} from "redux";
 import base64 from "base-64";
 import utf8 from "utf8";
 import {app} from "../../../common/appConfig";

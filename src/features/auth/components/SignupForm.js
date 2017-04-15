@@ -1,8 +1,6 @@
-import React, {Component, PropTypes} from "react";
-import {Link} from "react-router";
+import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import {redirectAuth} from "../../../common/routeConfig";
-import {Router, browserHistory} from 'react-router';
 export default class SignupForm extends Component {
     constructor(props) {
         super(props);
@@ -44,11 +42,11 @@ export default class SignupForm extends Component {
                 <div className="list-group list-group-sm">
                     <div className="list-group-item">
                         <input type="email" placeholder="Email" ref="username"
-                               className="form-control no-border" />
+                               className="form-control no-border"/>
                     </div>
                     <div className="list-group-item">
                         <input type="password" placeholder="Password" ref="password"
-                               className="form-control no-border" />
+                               className="form-control no-border"/>
                     </div>
                 </div>
                 <button type="submit" className="btn btn-lg btn-primary btn-block" onClick={this.onFormSubmit}>Log in
@@ -56,7 +54,7 @@ export default class SignupForm extends Component {
                 <div className="text-center m-t m-b"><a>Forgot password?</a></div>
                 <div className="line line-dashed"></div>
                 <p className="text-center">
-                    <small>Do not have an account? </small>
+                    <small>Do not have an account?</small>
                 </p>
                 <a className="btn btn-lg btn-default btn-block" href="">Create an account</a>
             </form>

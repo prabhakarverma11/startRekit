@@ -1,21 +1,34 @@
-import React, { Component, PropTypes } from 'react';
-import routeConfig from '../common/routeConfig';
-import SimpleNav from '../components/SimpleNav';
+import React, {Component, PropTypes} from "react";
+import Navigation from "../components/Navigation";
+import {connect} from "react-redux";
 
-export default class App extends Component {
-  static propTypes = {
-    children: PropTypes.node,
-  };
 
-  render() {
-    return (
-      <div className="app app-header-fixed ">
-        {/*<h1>My Awesome Project!</h1>*/}
-        {/*<SimpleNav routes={routeConfig} />*/}
-        <div>
-          {this.props.children}
-        </div>
-      </div>
-    );
-  }
+class App extends Component {
+    static propTypes = {
+        children: PropTypes.node,
+    };
+
+    render() {
+        const {auth: {isAuthenticated}, routes} = this.props;
+        console.log("App isAuthenticated: " + isAuthenticated);
+        return (
+            // className="app app-header-fixed "
+            <div >
+                {/*<h1>My Awesome Project!</h1>*/}
+                {isAuthenticated && <Navigation routes={routes}/> }
+                {/*{isAuthenticated && <SimpleNav routes={routes} /> }*/}
+                <div className=" ">
+                    {this.props.children}
+                </div>
+            </div>
+        );
+    }
 }
+
+
+function mapStateToProps(state) {
+    return {
+        auth: state.auth
+    };
+}
+export default connect(mapStateToProps,)(App);

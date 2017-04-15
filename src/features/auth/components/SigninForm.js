@@ -1,5 +1,4 @@
-import React, {Component, PropTypes} from "react";
-import {browserHistory, Link, Router} from "react-router";
+import React, {Component} from "react";
 import ReactDOM from "react-dom";
 export default class SigninForm extends Component {
     constructor(props) {

@@ -3,7 +3,6 @@ import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import * as actions from "./redux/actions";
 import SigninForm from "./components/SigninForm";
-import {push} from "react-router-redux";
 
 
 export class DefaultPage extends Component {
