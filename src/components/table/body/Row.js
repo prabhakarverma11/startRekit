@@ -1,11 +1,19 @@
-import React, {PropTypes, Component} from "react";
+import React, {Component} from "react";
 
-export default class Table extends Component{
+export default class Row extends Component {
+
+
     render(){
+        const {item} = this.props;
+
+
+
         return (
-            <table>
-                <TableHeader />
-            </table>
+        for (var key in item) {
+            <Cell displayName={item[key]}>
+            </Cell>
+        }
+
         );
     }
 }
