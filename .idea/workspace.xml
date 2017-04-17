@@ -3,20 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1eee36a6-e74d-4a06-a002-27a9cdbd2865" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PageNotFound.js" afterPath="$PROJECT_DIR$/src/components/PageNotFound.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/index.js" afterPath="$PROJECT_DIR$/src/components/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/navigation/Brand.js" afterPath="$PROJECT_DIR$/src/components/navigation/Brand.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/navigation/Home.js" afterPath="$PROJECT_DIR$/src/components/navigation/Home.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/navigation/Menu.js" afterPath="$PROJECT_DIR$/src/components/navigation/Menu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/navigation/UserProfile.js" afterPath="$PROJECT_DIR$/src/components/navigation/UserProfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/navigation/index.js" afterPath="$PROJECT_DIR$/src/components/navigation/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/table/body/Cell.js" afterPath="$PROJECT_DIR$/src/components/table/body/Cell.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/table/body/Row.js" afterPath="$PROJECT_DIR$/src/components/table/body/Row.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/table/body/index.js" afterPath="$PROJECT_DIR$/src/components/table/body/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/table/header/Cell.js" afterPath="$PROJECT_DIR$/src/components/table/header/Cell.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/table/header/index.js" afterPath="$PROJECT_DIR$/src/components/table/header/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/table/index.js" afterPath="$PROJECT_DIR$/src/components/table/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/features/leads/DefaultPage.js" afterPath="$PROJECT_DIR$/src/features/leads/DefaultPage.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -966,7 +952,7 @@
       <workItem from="1491816941502" duration="10898000" />
       <workItem from="1491903188696" duration="7129000" />
       <workItem from="1491910491910" duration="15345000" />
-      <workItem from="1492239539469" duration="41356000" />
+      <workItem from="1492239539469" duration="41429000" />
     </task>
     <task id="LOCAL-00001" summary="Changes">
       <created>1491912575589</created>
@@ -1010,11 +996,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492425615330</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="table component added.">
+      <created>1492452084469</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1492452084469</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78277000" />
+    <option name="totallyTimeSpent" value="78350000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1099,7 +1092,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes" />
+    <MESSAGE value="table component added." />
+    <option name="LAST_COMMIT_MESSAGE" value="table component added." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
