@@ -10,7 +10,7 @@ export default class TableHeader extends PureComponent {
         const headerCells = [];
         headers.forEach((value, key) => {
             headerCells.push(
-                <HeaderCell key={key} name={value.displayName}/>
+                <HeaderCell key={key} name={value.displayName} isSortable={value.sortable}/>
             );
         });
         return (

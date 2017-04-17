@@ -12,7 +12,7 @@ export class DefaultPage extends Component {
                 name: "name",
                 displayName: "NAME",
                 type: "INT",
-                sortable: true,
+                sortable: false,
                 order: 0
             }, {
                 name: "task",
@@ -30,7 +30,7 @@ export class DefaultPage extends Component {
                 name: "project",
                 displayName: "PROJECT",
                 type: "INT",
-                sortable: true,
+                sortable: false,
                 order: 3
             }, {
                 name: "name1",
@@ -204,44 +204,205 @@ export class DefaultPage extends Component {
 
                         </div>
                     </div>
-                    <div className="lead-selected-actions-box clearfix animated slideInUp">
-                        <div className="pull-left">
-                            <span className="text-md">1 Lead selected.</span>
-                            <span className="m-l-xs"><a href><span
-                                className="text-info-dker text-sm">Clear</span></a></span>
-                            <span className="m-l-lg">
-                            <button className="btn btn-default"><span className="text">Send Email</span></button>
-                            <button className="btn btn-default m-l-xs"><span className="text">Create Task</span></button>
-                            <div className="btn-group m-l dropdown">
-                                <ul className="dropdown-menu pull-right" role="menu">
-                                    <li><a href="#" >More Actions</a></li>
-                                    <li><a href="#" >Delete</a></li>
-                                    <li><a href="#" >Change Owner</a></li>
-                                    <li className="divider"></li>
-                                    <li><a href="" >Add To List</a></li>
-                                    <li><a href="" >Remove From List</a></li>
-                                </ul>
 
-                                <a className="btn btn-default" data-toggle="dropdown" >
-                                    <i className="fa  fa-ellipsis-h"></i></a>
+                </div>
+                <div className="row-row">
+                    <div className="cell w-full">
+                        <div className="cell-inner">
+                            <div className="hbox hbox-auto-xs bg-white">
+                                <div className="col w-md b-r filter-box">
+                                    <div className="vbox">
+                                        <div className="wrapper ">
+                                            <span>FILTER LEADS BY</span>
+                                            <span className="pull-right"><a href className="text-base"><span
+                                                className="text-info-dker">Clear</span></a></span>
+                                        </div>
+                                        <div className="row-row">
+                                            <div className="cell">
+                                                <div className="cell-inner">
+                                                    {/*<div className="wrapper">*/}
+                                                        {/*<a href="#" className="hide"><span className="text-info-dker">+ Add Filter</span></a>*/}
+
+                                                        {/*<table className="">*/}
+                                                            {/*<thead>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<th></th>*/}
+                                                                {/*<th></th>*/}
+                                                            {/*</tr>*/}
+                                                            {/*</thead>*/}
+                                                            {/*<tbody>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td colSpan="2">*/}
+                                                                    {/*<a href="#"><i className="fa fa-plus-square-o text-md m-r" /> First Name</a>*/}
+                                                                {/*</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td colSpan="2">*/}
+                                                                    {/*<a href="#"><i className="fa fa-plus-square-o text-md m-r" /> Activities</a></td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Deals</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Contact Name</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Email</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Phone</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Lead Owner</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Lead Source</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Created By</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Created Date</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>DOB</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Last Name</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>City</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Lead Score</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Lead Owner</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Lead Source</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Created By</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Created Date</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>DOB</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Last Name</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>City</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*<tr>*/}
+                                                                {/*<td><label className="i-checks i-checks-sm m-b-none m-r-xs"><input*/}
+                                                                    {/*type="checkbox" name="post[]" /><i /></label>*/}
+                                                                {/*</td>*/}
+                                                                {/*<td>Lead Score</td>*/}
+                                                            {/*</tr>*/}
+                                                            {/*</tbody>*/}
+
+                                                        {/*</table>*/}
+
+                                                    {/*</div>*/}
+
+                                                    <div className="wrapper b-t b-light text-center">
+                                                        <p>Footer with fluid height</p>
+                                                        <a href="" className="btn btn-info">Create Marker</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col ">
+
+                                    <div className="vbox">
+                                        <div className="row-row">
+                                            <div className="cell">
+                                                <div className="cell-inner">
+                                                    <div className="">
+                                                      <span className="pull-right">
+                                                        <a href className="js-collapse-filter-box">
+                                                            <i className="fa fa-chevron-left text-white text-xs m-t"
+                                                                />
+                                                        </a>
+                                                        <a href="" className="js-expand-filter-box " >
+                                                            <i className="fa fa-chevron-right text-white text-xs m-t"
+                                                                />
+                                                        </a>
+                                                        </span>
+                                                            <Table definition={definition} data={data}/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </span>
-
-                        </div>
-                        <div className="pull-right">
-                            <small className="text-muted inline m-t-sm m-b-sm m-r-lg">Showing 20-30 of 50 items</small>
-                            <ul className="pagination pagination-sm m-t-none m-b-none inline v-middle">
-                                <li className="paginate_button previous disabled"
-                                    aria-controls="DataTables_Table_1" tabIndex="0">
-                                    <a href="#"><i className="fa fa-angle-left text-lg fa-fw"></i></a></li>
-                                <li className="paginate_button next" aria-controls="DataTables_Table_1"
-                                    tabIndex="0">
-                                    <a href="#"><i className="fa fa-angle-right  text-lg fa-fw"></i></a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
-                <Table definition={definition} data={data}/>
             </div>
         );
     }
