@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from "react";
-import Navigation from "../components/Navigation";
-import {connect} from "react-redux";
+import Navigation from "../components/navigation/index";
 
 
 export default class App extends Component {
@@ -9,14 +8,10 @@ export default class App extends Component {
     };
 
     render() {
-        const {auth: {isAuthenticated}, routes} = this.props;
-        console.log("App isAuthenticated: " + isAuthenticated);
+        const {routes} = this.props;
         return (
-            // className="app app-header-fixed "
-            <div >
-                {/*<h1>My Awesome Project!</h1>*/}
+            <div className="app app-header-fixed app-aside-fixed app-aside-folded">
                 <Navigation routes={routes}/>
-                {/*{isAuthenticated && <SimpleNav routes={routes} /> }*/}
                 <div className=" ">
                     {this.props.children}
                 </div>

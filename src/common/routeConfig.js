@@ -1,11 +1,8 @@
 import App from "../containers/App";
-
-import {browserHistory} from "react-router";
 import {PageNotFound} from "../components";
 import homeRoute from "../features/home/route";
 import authRoute from "../features/auth/route";
-import {logout} from "../features/auth/redux/logoutAction";
-import leadsRoute from '../features/leads/route';
+import leadsRoute from "../features/leads/route";
 
 /*
  * @param {Redux Store}
@@ -74,7 +71,6 @@ export default (store) => {
             ],
         }]
     );
-    console.log("Store config: ");
     console.log(store);
     routes.forEach(handleIndexRoute);
     return routes;

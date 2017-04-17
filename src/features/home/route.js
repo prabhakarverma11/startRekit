@@ -3,6 +3,8 @@ import {DefaultPage, TestPage1, TestPage2} from "./index";
 export default (requireAuth) => ( {
     path: '',
     name: 'home',
+    displayName: "Home",
+    presentOnNav: true,
 
     childRoutes: [
         {path: 'default-page', component: DefaultPage, isIndex: true, onEnter: requireAuth},

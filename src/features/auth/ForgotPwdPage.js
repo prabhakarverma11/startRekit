@@ -21,11 +21,11 @@ export class ForgotPwdPage extends Component {
                             <strong>Input your email to reset your password</strong>
                         </div>
                         <ForgotPwdForm {...this.props}
-                                    login={(creds) => {
-                                        this.props.actions.login(creds, this.props.history)
-                                    }}
-                                    errorMessage={this.props.auth.errorMessage}
-                                    successMessage={this.props.auth.successMessage}/>
+                                       login={(creds) => {
+                                           this.props.actions.login(creds, this.props.history)
+                                       }}
+                                       errorMessage={this.props.auth.errorMessage}
+                                       successMessage={this.props.auth.successMessage}/>
 
                     </div>
                 </div>
