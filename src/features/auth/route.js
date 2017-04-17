@@ -1,10 +1,11 @@
-import {LoginPage, LogoutPage} from "./index";
-import {logout} from "./redux/logoutAction";
+import {LoginPage, LogoutPage, RegisterPage,ForgotPwdPage} from "./index";
 
 export default (redirectAuth, dispatch) => ({
-    path: 'login',
+    path: 'auth',
     childRoutes: [
-        {path: 'default-page', component: LoginPage, isIndex: true, onEnter: redirectAuth},
+        {path: 'login', component: LoginPage, isIndex: true, onEnter: redirectAuth},
         {path: 'logout', component: LogoutPage,},
+        {path: 'register', component: RegisterPage,},
+        {path: 'forgotpwd', component: ForgotPwdPage,},
     ],
 });

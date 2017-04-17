@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
-export default class SigninForm extends Component {
+import {Link} from "react-router";
+
+export default class ForgotPwdForm extends Component {
     constructor(props) {
         super(props);
     }
@@ -43,25 +45,18 @@ export default class SigninForm extends Component {
                         <input type="email" placeholder="Email" ref="username"
                                className="form-control no-border"/>
                     </div>
-                    <div className="list-group-item">
-                        <input type="password" placeholder="Password" ref="password"
-                               className="form-control no-border"/>
-                    </div>
+
                 </div>
-                <button type="submit" className="btn btn-lg btn-primary btn-block" onClick={this.onFormSubmit}>Log in
+                <button type="submit" className="btn btn-lg btn-primary btn-block" onClick={this.onFormSubmit}>Send
                 </button>
-                <div className="text-center m-t m-b"><a>Forgot password?</a></div>
                 <div className="line line-dashed"></div>
-                <p className="text-center">
-                    <small>Do not have an account?</small>
-                </p>
-                <a className="btn btn-lg btn-default btn-block" href="">Create an account</a>
+
             </form>
 
         );
     }
 }
-SigninForm.propTypes = {
+ForgotPwdForm.propTypes = {
     // login: PropTypes.func.isRequired,
     // errorMessage: PropTypes.string
 }

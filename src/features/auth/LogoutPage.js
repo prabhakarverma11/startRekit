@@ -17,7 +17,7 @@ export class LogoutPage extends Component {
                     <a className="navbar-brand block m-t">Angulr</a>
                     <div className="m-b-lg">
                         <h3 className="m-b-n-lg">You're signed out.</h3><br/><br/>
-                        <h5 className="m-b-n-lg">Click <Link to="/login" styleName="color: blue"> here </Link> to login.
+                        <h5 className="m-b-n-lg">Click <Link to="/auth" styleName="color: blue"> here </Link> to login.
                         </h5>
                     </div>
                 </div>

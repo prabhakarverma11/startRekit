@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
+import {Link} from "react-router";
 import {redirectAuth} from "../../../common/routeConfig";
 export default class SignupForm extends Component {
     constructor(props) {
@@ -41,6 +42,10 @@ export default class SignupForm extends Component {
                 </div>
                 <div className="list-group list-group-sm">
                     <div className="list-group-item">
+                        <input type="text" placeholder="Name" ref="name"
+                               className="form-control no-border"/>
+                    </div>
+                    <div className="list-group-item">
                         <input type="email" placeholder="Email" ref="username"
                                className="form-control no-border"/>
                     </div>
@@ -49,14 +54,21 @@ export default class SignupForm extends Component {
                                className="form-control no-border"/>
                     </div>
                 </div>
-                <button type="submit" className="btn btn-lg btn-primary btn-block" onClick={this.onFormSubmit}>Log in
+                <div className="checkbox m-b-md m-t-none">
+                    <label className="i-checks">
+                        <input type="checkbox" required="" tabIndex="0" aria-checked="false" aria-required="true" aria-invalid="true" />
+                        <i></i>
+                        Agree the <a href="">terms and policy</a>
+                    </label>
+                </div>
+
+                <button type="submit" className="btn btn-lg btn-primary btn-block" onClick={this.onFormSubmit}>Register
                 </button>
-                <div className="text-center m-t m-b"><a>Forgot password?</a></div>
                 <div className="line line-dashed"></div>
                 <p className="text-center">
-                    <small>Do not have an account?</small>
+                    <small>Already have an account?</small>
                 </p>
-                <a className="btn btn-lg btn-default btn-block" href="">Create an account</a>
+                <Link to="/auth/" className="btn btn-lg btn-default btn-block">Log in</Link>
             </form>
 
         );

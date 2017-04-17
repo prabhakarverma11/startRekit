@@ -36,6 +36,8 @@ const isAuthenticated = (state = (localStorage.getItem('id_token') != null),
 
 const errorMessage = (state = '',
                       action) => {
+    console.log("!!!!!!!!!!!!!!!!");
+    console.log(action.errorMessage);
     switch (action.type) {
         case LOGIN_REQUEST:
         case LOGIN_SUCCESS:
@@ -44,7 +46,7 @@ const errorMessage = (state = '',
             return '';
         case LOGIN_FAILURE:
         case LOGOUT_FAILURE:
-            return action.message;
+            return action.errorMessage;
         default:
             return state;
     }

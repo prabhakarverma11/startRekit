@@ -37,7 +37,7 @@ export function logout() {
             dispatch(logoutError());
         }
         dispatch(receiveLogout());
-        dispatch(push('/login/logout'));
+        dispatch(push('/auth/logout'));
         return;
     }
 }

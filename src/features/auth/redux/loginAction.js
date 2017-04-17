@@ -34,6 +34,7 @@ function loginError(message) {
         type: LOGIN_FAILURE,
         isFetching: false,
         isAuthenticated: false,
+        errorMessage: message,
         message
     });
 }

@@ -19,7 +19,7 @@ export default (store) => {
         console.log("Testing");
         if (!isAuthenticated) {
             replace({
-                pathname: '/login',
+                pathname: '/auth',
                 state: {nextPathname: nextState.location.pathname}
             });
         }

@@ -2,31 +2,30 @@ import React, {Component, PropTypes} from "react";
 import {bindActionCreators} from "redux";
 import {connect} from "react-redux";
 import * as actions from "./redux/actions";
-import LoginForm from "./components/LoginForm";
+import SignupForm from "./components/SignupForm";
 
 
-export class LoginPage extends Component {
+export class RegisterPage extends Component {
     static propTypes = {
         auth: PropTypes.object.isRequired,
         actions: PropTypes.object.isRequired
     };
 
     render() {
-        const {auth: {errorMessage,successMessage},actions: {login},history} = this.props;
         return (
             <div className="app app-header-fixed ">
                 <div className="container w-xxl w-auto-xs">
                     <a className="navbar-brand block m-t">Angulr</a>
                     <div className="m-b-lg">
                         <div className="wrapper text-center">
-                            <strong>Sign in to get in touch</strong>
+                            <strong>Sign up to find interesting thing</strong>
                         </div>
-                        <LoginForm {...this.props}
+                        <SignupForm {...this.props}
                                     login={(creds) => {
-                                        login(creds, history)
+                                        this.props.actions.login(creds, this.props.history)
                                     }}
-                                    errorMessage={errorMessage}
-                                    successMessage={successMessage}/>
+                                    errorMessage={this.props.auth.errorMessage}
+                                    successMessage={this.props.auth.successMessage}/>
 
                     </div>
                 </div>
@@ -56,4 +55,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(LoginPage);
+)(RegisterPage);
