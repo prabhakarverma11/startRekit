@@ -3,16 +3,20 @@ import Row from "./Row";
 
 export default class TableBody extends Component {
 
-
-    render(){
-
+    render() {
         const {items} = this.props;
+        const insertRows = [];
+        items.forEach(
+            (value, key) => {
+                insertRows.push(
+                    <Row key={key} item={value}/>
+                );
+            }
+        );
         return (
-            items.reduce((prev, item) => {
-                prev.push(
-                    <Row item={item}></Row>
-                )
-            })
+            <tbody>
+            {insertRows}
+            </tbody>
         )
 
     }

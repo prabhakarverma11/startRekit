@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 
-export default class Table extends Component{
-    render(){
+export default class HeaderCell extends Component {
+    render() {
 
         const {name} = this.props;
         return (
@@ -10,18 +10,18 @@ export default class Table extends Component{
                     <a href="#" data-toggle="dropdown"
                        className="dropdown-toggle"
                        aria-expanded="false">{name}
-                        <i className="fa fa-chevron-down "
-                        ></i>
+                        <i className="fa fa-chevron-down"/>
                     </a>
-                    <ul className="dropdown-menu " role="menu"
-                        style="min-width: 100px;">
-                        <li><a href="" className="text-xs">Asc <i
-                            className="fa fa-chevron-up m-l"
-                        ></i></a>
+                    <ul className="dropdown-menu " role="menu">
+                        <li>
+                            <a href="" className="text-xs">Asc
+                                <i className="fa fa-chevron-up m-l"/>
+                            </a>
                         </li>
-                        <li><a href="" className="text-xs">Desc <i
-                            className="fa fa-chevron-down m-l"
-                        ></i></a>
+                        <li>
+                            <a href="" className="text-xs">Desc
+                                <i className="fa fa-chevron-down m-l"/>
+                            </a>
                         </li>
                     </ul>
                 </div>

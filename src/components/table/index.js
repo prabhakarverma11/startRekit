@@ -1,27 +1,27 @@
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import TableHeader from "./header/index";
+import TableBody from "./body/index";
 
-export default class Table extends Component{
+export default class Table extends PureComponent{
 
     render(){
 
         const {definition, data} = this.props;
-
         let displayedHeaders = new Map();
 
-        definition.reduce((prev, field) => {
-            displayedHeaders.set(field.name, field);
+        definition.map((item) => {
+            displayedHeaders.set(item.name, item);
         });
-
-        data.reduce((prev, item) => {
-
+        let displayedData = new Map();
+        data.map((item,index) => {
+            displayedData.set(index, item);
         });
 
         return (
             <div className="table-responsive bg-white ">
                 <table className="table table-hover b-t b-light">
-                    <TableHeader headers={displayedHeaders}></TableHeader>
-                    <TableBody></TableBody>
+                    <TableHeader headers={displayedHeaders} />
+                    <TableBody items={displayedData}/>
                 </table>
             </div>
         );

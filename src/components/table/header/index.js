@@ -1,31 +1,33 @@
 import React, {PureComponent} from "react";
-import Cell from "../body/Cell";
+import HeaderCell from "./Cell";
 
 export default class TableHeader extends PureComponent {
 
 
-    render(){
+    render() {
 
         const {headers} = this.props;
-
+        const headerCells = [];
+        headers.forEach((value, key) => {
+            headerCells.push(
+                <HeaderCell key={key} name={value.displayName}/>
+            );
+        });
         return (
             <thead>
             <tr>
                 <th>
                     <label className=" m-b-none">
-                        <a href="#" className="js-lead-list-fields-select"><i
-                            className="fa fa-table fa-fw text-lg m-r-sm text-muted"></i></a>
+                        <a href="#" className="js-lead-list-fields-select">
+                            <i className="fa fa-table fa-fw text-lg m-r-sm text-muted"/>
+                        </a>
                     </label>
                     <label className=" i-checks i-checks-sm m-b-none  pull-right">
-                        <input type="checkbox"><i></i></input>
+                        <input type="checkbox"/>
+                        <i />
                     </label>
                 </th>
-
-                headers.reduce((prev, item) => {
-                prev.push(
-                    <Cell name={item.displayName}></Cell>
-                )
-            }, [])
+                {headerCells}
             </tr>
             </thead>
 

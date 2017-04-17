@@ -1,11 +1,12 @@
-import React, {PropTypes, Component} from "react";
+import React,{PureComponent} from "react";
 
-export default class Table extends Component{
-    render(){
+export default class Cell extends PureComponent {
+    render() {
+        const {displayName} = this.props;
         return (
-            <table>
-                <TableHeader />
-            </table>
+            <td>
+                {displayName}
+            </td>
         );
     }
 }

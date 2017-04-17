@@ -2,7 +2,7 @@
  * Created by nikunj on 17/4/17.
  */
 import React, {PureComponent} from "react";
-
+import {Link} from "react-router";
 
 export class Home extends PureComponent {
     render() {
@@ -13,10 +13,10 @@ export class Home extends PureComponent {
                     <i className="fa fa-dedent fa-fw text"></i>
                     <i className="fa fa-indent fa-fw text-active"></i>
                 </a>
-                <a href="#" className="btn no-shadow navbar-btn"
-                   target="#aside-user">
+                <Link to="/" className="btn no-shadow navbar-btn"
+                   >
                     <i className="icon-home fa-fw"></i>
-                </a>
+                </Link>
             </div>
         )
     };

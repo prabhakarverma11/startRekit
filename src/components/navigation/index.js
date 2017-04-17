@@ -19,17 +19,17 @@ class Navigation extends PureComponent {
         console.log(isAuthenticated);
         return (
             <header id="header" className="app-header navbar" role="menu">
-                <Brand></Brand>
+                <Brand />
 
                 <div className="collapse pos-rlt navbar-collapse box-shadow bg-info dker">
-                    <Home></Home>
-                    <Menu routes={routes[0].childRoutes} basePath={""}></Menu>
+                    <Home />
+                    <Menu routes={routes[0].childRoutes} basePath={""} />
                     <ul className="nav navbar-nav navbar-right">
-                        <Notification></Notification>
-                        <UserProfile></UserProfile>
+                        <Notification />
+                        <UserProfile />
                     </ul>
 
-                    <Search></Search>
+                    <Search />
 
                 </div>
             </header>

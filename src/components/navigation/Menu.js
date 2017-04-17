@@ -3,6 +3,7 @@
  */
 
 import React, {PureComponent} from "react";
+import {Link} from "react-router";
 
 export class Menu extends PureComponent {
 
@@ -15,10 +16,18 @@ export class Menu extends PureComponent {
                 {
                     routes.reduce((prev, item) => {
                         console.log(item);
+                        let path;
+                        if (/^\//.test(item.path)) {
+                            path = item.path;
+                        } else if (basePath === '/') {
+                            path = `/${item.path}`;
+                        } else {
+                            path = `${basePath}/${item.path}`;
+                        }
                         prev.push(
                             item.presentOnNav &&
                             <li className="" key={item.path}>
-                                <a href="#"><span>{item.displayName}</span></a>
+                                <Link to={path}><span>{item.displayName}</span></Link>
                             </li>
                         );
                         return prev;

@@ -2,7 +2,7 @@
  * Created by nikunj on 17/4/17.
  */
 import React, {PureComponent} from "react";
-
+import {Link} from "react-router";
 
 export class Brand extends PureComponent {
     render() {
@@ -11,15 +11,14 @@ export class Brand extends PureComponent {
                 <button className="pull-right visible-xs dk" target=".navbar-collapse">
                     <i className="glyphicon glyphicon-align-justify"></i>
                 </button>
-                <button className="pull-right hide" target=".app-aside"
-                >
+                <button className="pull-right hide" target=".app-aside">
                     <i className="glyphicon glyphicon-align-justify"></i>
                 </button>
-                <a href="#/" className="navbar-brand text-lt">
+                <Link to="/" className="navbar-brand text-lt">
                     <i className="fa fa-btc"></i>
                     <img src="img/logo.png" alt="." className="hide"></img>
                     <span className="hidden-folded m-l-xs">READ</span>
-                </a>
+                </Link>
             </div>
         )
     }
