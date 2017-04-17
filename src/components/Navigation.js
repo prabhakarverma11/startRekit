@@ -2,8 +2,7 @@ import React, {PropTypes, PureComponent} from "react";
 import {connect} from "react-redux";
 import {LinkContainer} from "react-router-bootstrap";
 import {Link} from "react-router";
-import {Button, FormControl, FormGroup, MenuItem, Nav, Navbar, NavDropdown, NavItem} from "react-bootstrap";
-import Header from "./table/Header";
+import {Nav, Navbar, NavItem} from "react-bootstrap";
 class Navigation extends PureComponent {
     constructor(props) {
         super(props);
@@ -94,6 +93,7 @@ class Navigation extends PureComponent {
         console.log(isAuthenticated);
         return (
             <div className="app app-header-fixed app-aside-fixed app-aside-folded">
+                {isAuthenticated &&
                 <Navbar inverse collapseOnSelect className="app-header navbar">
                     <Navbar.Header className="navbar-header bg-info dker">
                         <Navbar.Brand>
@@ -102,14 +102,12 @@ class Navigation extends PureComponent {
                         <Navbar.Toggle />
                     </Navbar.Header>
                     <Navbar.Collapse className="collapse pos-rlt navbar-collapse box-shadow bg-info dker">
-                        {isAuthenticated &&
-                            <Nav pullRight>
-                                <LinkContainer to="/auth/logout">
-                                    <NavItem eventKey={0}>Logout</NavItem>
-                                </LinkContainer>
-                            </Nav>
-                        }
 
+                        <Nav pullRight>
+                            <LinkContainer to="/auth/logout">
+                                <NavItem eventKey={0}>Logout</NavItem>
+                            </LinkContainer>
+                        </Nav>
                         <Nav className="nav navbar-nav">
                             <LinkContainer to='/leads'>
                                 <NavItem eventKey={3}>Lead</NavItem>
@@ -117,6 +115,7 @@ class Navigation extends PureComponent {
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
+                }
             </div>
         );
     }

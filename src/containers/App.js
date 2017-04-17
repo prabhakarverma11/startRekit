@@ -3,7 +3,7 @@ import Navigation from "../components/Navigation";
 import {connect} from "react-redux";
 
 
-class App extends Component {
+export default class App extends Component {
     static propTypes = {
         children: PropTypes.node,
     };
@@ -15,7 +15,7 @@ class App extends Component {
             // className="app app-header-fixed "
             <div >
                 {/*<h1>My Awesome Project!</h1>*/}
-                {isAuthenticated && <Navigation routes={routes}/> }
+                <Navigation routes={routes}/>
                 {/*{isAuthenticated && <SimpleNav routes={routes} /> }*/}
                 <div className=" ">
                     {this.props.children}
@@ -25,10 +25,3 @@ class App extends Component {
     }
 }
 
-
-function mapStateToProps(state) {
-    return {
-        auth: state.auth
-    };
-}
-export default connect(mapStateToProps,)(App);
