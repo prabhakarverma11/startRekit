@@ -19,6 +19,8 @@ export default class SimpleNav extends PureComponent {
                         console.log("Simple Nav ");
                         console.log(prev);
                         console.log(item.childRoutes);
+
+
                         let path;
                         if (/^\//.test(item.path)) {
                             path = item.path;
@@ -35,19 +37,13 @@ export default class SimpleNav extends PureComponent {
                                 </Link>
                             </li>
                         );
-                        {/*if (item.childRoutes && item.childRoutes.length) {*/
-                        }
-                        {/*prev.push(*/
-                        }
-                        {/*<li key={`${path}_wrapper`}>*/
-                        }
-                        {/*{this.renderLinks(item.childRoutes, path)}*/
-                        }
-                        {/*</li>*/
-                        }
-                        {/*);*/
-                        }
-                        {/*}*/
+
+                        if (item.childRoutes && item.childRoutes.length) {
+                            prev.push(
+                                <li key={"${path}"}>
+                                    {this.renderLinks(item.childRoutes, path)}
+                                </li>
+                            )
                         }
                         return prev;
                     }, [])
