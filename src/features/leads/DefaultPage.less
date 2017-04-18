@@ -1,5 +1,98 @@
 @import '../../styles/mixins.less';
 
 .leads-default-page {
-
+  .mW100 {
+    min-width: 100px;
+  }
+  .lead-listing-table tr {
+    th:nth-of-type(2), td:nth-of-type(2) {
+      min-width: 300px;
+      padding-left: 120px;
+    }
+    th {
+      white-space: nowrap;
+      min-width: 100px;
+      font-weight: 500;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    td {
+      white-space: nowrap;
+      min-width: 100px;
+      color: #000000;
+      font-size: 13px;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    th:first-of-type {
+      position: absolute;
+      background: #ffffff;
+      min-width: 90px;
+      border-right: 1px solid #f7f7f7;
+      height: 34px;
+      z-index: 999;
+    }
+    td:first-of-type {
+      position: absolute;
+      background: #ffffff;
+      min-width: 90px;
+      border-right: 1px solid #f7f7f7;
+    }
+  }
+  .footer .nav.nav-md > li > a {
+    padding: 7px 15px;
+  }
+  .footer.navbar {
+    min-height: 35px;
+  }
+  .app-content-body {
+    padding-bottom: 35px;
+  }
+  .filter-box table tr td {
+    padding: 5px 0px;
+  }
+  table.lead-listing-table tbody tr .lead-item-action {
+    display: none;
+  }
+  table.lead-listing-table tbody tr:hover .lead-item-action {
+    display: inline-block;
+  }
+  .lead-list-header-box {
+    height: 75px;
+  }
+  .animated {
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  .app-content-full {
+    bottom: 37px;
+    width: 100% !important;
+  }
+  .no-scroll {
+    overflow: hidden;
+  }
+  #lead-field-select-modal .modal-body {
+    max-height: 400px;
+    overflow: auto;
+  }
+  #lead-field-select-modal .list-group-sp .list-group-item {
+    border: none;
+    padding: 5px;
+    border-bottom: 1px solid #f7f7f7;
+    margin: 0;
+    span.drag-holder {
+      display: none;
+    }
+    span.drag-holder:hover {
+      cursor: move;
+    }
+  }
+  #lead-field-select-modal .list-group-sp .list-group-item:hover {
+    background: #eeeeee;
+    span.drag-holder {
+      display: inline-block;
+    }
+  }
 }

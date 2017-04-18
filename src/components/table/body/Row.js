@@ -7,8 +7,10 @@ export default class Row extends Component {
     render(){
         const {item} = this.props;
         const insertCells = [];
+
         console.log(item);
-        for (var key in item) {
+
+        for (let key in item) {
             insertCells.push(<Cell key={key} displayName={item[key]} />);
         }
 

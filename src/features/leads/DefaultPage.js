@@ -82,8 +82,10 @@ export class DefaultPage extends Component {
                 order: 7
             }
         ];
+
         let dt = new Date(2017,4,18);
         dt = dt.getDate()+"/"+dt.getMonth()+"/"+dt.getFullYear();
+
         const data = [
             {
                 name: "Prabhakar",
@@ -392,7 +394,8 @@ export class DefaultPage extends Component {
                                                                 />
                                                         </a>
                                                         </span>
-                                                            <Table definition={definition} data={data}/>
+                                                        <Table definition={definition} data={data}
+                                                               appliedClasses="lead-listing-table"/>
                                                     </div>
                                                 </div>
                                             </div>
