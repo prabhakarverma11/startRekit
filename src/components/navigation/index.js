@@ -18,7 +18,8 @@ class Navigation extends PureComponent {
         console.log("from nav");
         console.log(isAuthenticated);
         return (
-            <header id="header" className="app-header navbar" role="menu">
+            <div>
+            {isAuthenticated && <header id="header" className="app-header navbar" role="menu">
                 <Brand />
 
                 <div className="collapse pos-rlt navbar-collapse box-shadow bg-info dker">
@@ -32,7 +33,8 @@ class Navigation extends PureComponent {
                     <Search />
 
                 </div>
-            </header>
+            </header>}
+            </div>
         );
     }
 }

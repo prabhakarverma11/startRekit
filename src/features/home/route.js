@@ -4,7 +4,7 @@ export default (requireAuth) => ( {
     path: '',
     name: 'home',
     displayName: "Home",
-    presentOnNav: true,
+    presentOnNav: false,
 
     childRoutes: [
         {path: 'default-page', component: DefaultPage, isIndex: true, onEnter: requireAuth},

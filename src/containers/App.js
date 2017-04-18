@@ -12,7 +12,7 @@ export default class App extends Component {
         return (
             <div className="app app-header-fixed app-aside-fixed app-aside-folded">
                 <Navigation routes={routes}/>
-                <div className=" ">
+                <div className="">
                     {this.props.children}
                 </div>
             </div>

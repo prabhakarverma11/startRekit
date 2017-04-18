@@ -3,6 +3,7 @@
  */
 
 import React, {PureComponent} from "react";
+import {Link} from "react-router";
 
 export class UserProfile extends PureComponent {
     render() {
@@ -42,7 +43,7 @@ export class UserProfile extends PureComponent {
                     </li>
                     <li className="divider" />
                     <li>
-                        <a>Logout</a>
+                        <Link to="/auth/logout">Logout</Link>
                     </li>
                 </ul>
             </li>
