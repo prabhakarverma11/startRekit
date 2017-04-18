@@ -19,21 +19,21 @@ class Navigation extends PureComponent {
         console.log(isAuthenticated);
         return (
             <div>
-            {isAuthenticated && <header id="header" className="app-header navbar" role="menu">
-                <Brand />
+                {isAuthenticated && <header id="header" className="app-header navbar" role="menu">
+                    <Brand />
 
-                <div className="collapse pos-rlt navbar-collapse box-shadow bg-info dker">
-                    <Home />
-                    <Menu routes={routes[0].childRoutes} basePath={""} />
-                    <ul className="nav navbar-nav navbar-right">
-                        <Notification />
-                        <UserProfile />
-                    </ul>
+                    <div className="collapse pos-rlt navbar-collapse box-shadow bg-info dker">
+                        <Home />
+                        <Menu routes={routes[0].childRoutes} basePath={""}/>
+                        <ul className="nav navbar-nav navbar-right">
+                            <Notification />
+                            <UserProfile />
+                        </ul>
 
-                    <Search />
+                        <Search />
 
-                </div>
-            </header>}
+                    </div>
+                </header>}
             </div>
         );
     }
@@ -41,6 +41,7 @@ class Navigation extends PureComponent {
 
 Navigation.propTypes = {
     routes: PropTypes.array.isRequired,
+    auth: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {

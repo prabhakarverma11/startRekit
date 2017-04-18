@@ -1,12 +1,13 @@
-import React, {PureComponent} from "react";
+import React, {PropTypes, PureComponent} from "react";
 import HeaderCell from "./Cell";
 
-export default class TableHeader extends PureComponent {
+class TableHeader extends PureComponent {
 
 
     render() {
 
         const {headers} = this.props;
+
         const headerCells = [];
 
         headers.forEach((value, key) => {
@@ -36,3 +37,9 @@ export default class TableHeader extends PureComponent {
         );
     }
 }
+
+TableHeader.propTypes = {
+    headers: PropTypes.object.isRequired
+}
+
+export default TableHeader;
